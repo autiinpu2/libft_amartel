@@ -36,7 +36,7 @@ SRCS = \
 	$(SRC_DIR)ft_tolower.c\
 	$(SRC_DIR)ft_toupper.c\
 	$(SRC_DIR)ft_strjoin.c\
-#	$(SRC_DIR)ft_split.c
+	$(SRC_DIR)ft_split.c
 #	$(SRC_DIR)ft_striteri.c\
 #	$(SRC_DIR)ft_strstim.c\
 #	$(SRC_DIR)ft_itoa.c\
