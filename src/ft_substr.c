@@ -30,6 +30,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!sub)
 		return (NULL);
 	while (i < len_substr)
-		sub[i++] = s[start++];
+	{
+		sub[i] = s[start];
+		i++;
+		start++;
+	}
 	return (sub);
 }
