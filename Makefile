@@ -51,9 +51,11 @@ SRC_BONUS = \
 	$(SRC_DIR)ft_lstlast_bonus.c \
 	$(SRC_DIR)ft_lstnew_bonus.c \
 	$(SRC_DIR)ft_lstsize_bonus.c \
+	$(SRC_DIR)ft_lstdelone_bonus.c \
 	$(SRC_DIR)ft_lstadd_back_bonus.c \
 	$(SRC_DIR)ft_lstclear_bonus.c \
-	$(SRC_DIR)ft_lstdelone_bonnus.c
+	$(SRC_DIR)ft_lstiter_bonus.c \
+	$(SRC_DIR)ft_lstmap_bonus.c
 
 
 INCLUDE = -Iincludes

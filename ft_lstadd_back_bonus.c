@@ -6,8 +6,26 @@
 /*   By: amartel <marvin@d42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 08:03:40 by amartel           #+#    #+#             */
-/*   Updated: 2025/10/22 08:03:40 by amartel          ###   ########.fr       */
+/*   Updated: 2025/10/22 19:39:12 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
+
+#include "libft.h"
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*tmp;
+
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = *lst;
+	tmp = ft_lstlast(tmp);
+	tmp->next = new;
+}

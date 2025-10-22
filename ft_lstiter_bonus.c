@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amartel <marvin@d42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 08:41:41 by amartel           #+#    #+#             */
-/*   Updated: 2025/10/22 20:02:29 by amartel          ###   ########.fr       */
+/*   Created: 2025/10/22 18:20:23 by amartel           #+#    #+#             */
+/*   Updated: 2025/10/22 20:33:59 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*tmp;
-	t_list	*last;
 
-	if (!lst || !del)
+	if (!lst || !f)
 		return ;
-	if (!*lst)
-		return ;
-	tmp = *lst;
-	while (tmp)
-	{
-		last = tmp;
+	tmp = lst;
+	while (tmp) {
+		f(tmp->content);
 		tmp = tmp->next;
-		del(last->content);
-		free(last);
 	}
-	*lst = NULL;
 }
