@@ -37,14 +37,14 @@ SRCS = \
 	$(SRC_DIR)ft_toupper.c\
 	$(SRC_DIR)ft_strjoin.c\
 	$(SRC_DIR)ft_split.c\
-	$(SRC_DIR)ft_strstim.c
-#	$(SRC_DIR)ft_striteri.c\
-#	$(SRC_DIR)ft_itoa.c\
-#	$(SRC_DIR)ft_putchar_fd.c\
-#	$(SRC_DIR)ft_putendl_fd.c\
-#	$(SRC_DIR)ft_strmapi.c\
-#	$(SRC_DIR)ft_putnbr_fd.c\
-#	$(SRC_DIR)ft_putstr_fd.c\
+	$(SRC_DIR)ft_strstim.c\
+	$(SRC_DIR)ft_itoa.c\
+	$(SRC_DIR)ft_strmapi.c\
+	$(SRC_DIR)ft_striteri.c\
+	$(SRC_DIR)ft_putchar_fd.c\
+	$(SRC_DIR)ft_putendl_fd.c\
+	$(SRC_DIR)ft_putnbr_fd.c\
+	$(SRC_DIR)ft_putstr_fd.c
 
 
 INCLUDE = -Iincludes
