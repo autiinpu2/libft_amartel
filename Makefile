@@ -77,7 +77,7 @@ fclean: clean
 	rm -f $(NAME)
 
 clean:
-	@if [ -d "build" ]; then rm -rf build; fi;
+	rm -rf $(BUILD_DIR)
 
 re: fclean $(NAME)
 .PHONY: all clean fclean re bonus
