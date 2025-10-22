@@ -6,22 +6,27 @@
 /*   By: amartel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:33:14 by amartel           #+#    #+#             */
-/*   Updated: 2025/10/22 04:30:05 by amartel          ###   ########.fr       */
+/*   Updated: 2025/10/22 05:26:03 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
 #include "libft.h"
-size_t	count_bits(long n) {
-	size_t count = 0;
+
+size_t	count_bits(long n)
+{
+	size_t	count;
+
+	count = 0;
 	if (n == 0 || n < 0)
 		count++;
-	while (n) {
+	while (n)
+	{
 		n = n / 10;
 		count++;
 	}
-	return count;
+	return (count);
 }
 
 char	*ft_itoa(int n)
@@ -37,11 +42,13 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (longn == 0)
 		s[0] = '0';
-	if (n < 0) {
+	if (n < 0)
+	{
 		s[0] = '-';
 		longn = -longn;
 	}
-	while (longn) {
+	while (longn)
+	{
 		count--;
 		s[count] = longn % 10 + '0';
 		longn = longn / 10;
