@@ -6,15 +6,13 @@
 /*   By: amartel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:33:14 by amartel           #+#    #+#             */
-/*   Updated: 2025/10/22 05:26:03 by amartel          ###   ########.fr       */
+/*   Updated: 2025/10/23 13:20:52 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "libft.h"
 
-size_t	count_bits(long n)
+static size_t	count_bits(long n)
 {
 	size_t	count;
 
