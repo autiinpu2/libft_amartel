@@ -6,7 +6,7 @@
 /*   By: amartel <marvin@d42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:20:23 by amartel           #+#    #+#             */
-/*   Updated: 2025/10/22 20:33:59 by amartel          ###   ########.fr       */
+/*   Updated: 2025/10/23 11:13:21 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	if (!lst || !f)
 		return ;
 	tmp = lst;
-	while (tmp) {
+	while (tmp)
+	{
 		f(tmp->content);
 		tmp = tmp->next;
 	}
