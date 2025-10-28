@@ -1,6 +1,6 @@
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 BUILD_DIR = build/
 
@@ -37,7 +37,7 @@ SRCS = \
 	$(SRC_DIR)ft_toupper.c\
 	$(SRC_DIR)ft_strjoin.c\
 	$(SRC_DIR)ft_split.c\
-	$(SRC_DIR)ft_strstim.c\
+	$(SRC_DIR)ft_strtrim.c\
 	$(SRC_DIR)ft_itoa.c\
 	$(SRC_DIR)ft_strmapi.c\
 	$(SRC_DIR)ft_striteri.c\
