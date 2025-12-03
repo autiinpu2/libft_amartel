@@ -54,7 +54,9 @@ SRC = \
 	$(SRC_DIR)ft_lstiter.c \
 	$(SRC_DIR)ft_lstmap.c \
 	$(SRC_DIR)get_next_line.c \
-	$(SRC_DIR)get_next_line_utils.c
+	$(SRC_DIR)get_next_line_utils.c \
+	$(SRC_DIR)ft_atol.c \
+	$(SRC_DIR)ft_atoll.c
 
 INCLUDE = -Iincludes
 
