@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:29:14 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 17:58:53 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/07 16:33:52 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isalnum(const int c)
 {
 	if (ft_isalpha(c) == 1024 || ft_isdigit(c) == 2048)
-		return (8);
+		return (1);
 	return (0);
 }

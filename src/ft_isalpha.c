@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:01:50 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 17:58:58 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/07 16:33:46 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isalpha(const int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1024);
+		return (1);
 	return (0);
 }

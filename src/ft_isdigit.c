@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:32:46 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 17:59:04 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/07 16:33:35 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isdigit(const int c)
 {
 	if (c >= '0' && c <= '9')
-		return (2048);
+		return (1);
 	return (0);
 }
