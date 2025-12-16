@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 23:00:16 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 18:00:04 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/16 11:51:18 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_strdup(const char *s1)
 		dest[i] = s1[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }
