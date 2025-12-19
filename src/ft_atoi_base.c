@@ -6,11 +6,12 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:18 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/16 11:53:05 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/20 00:03:52 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "atoi.h"
+#include "libft.h"
 
 static int	get_index_in_base(char c, char *base)
 {
@@ -26,7 +27,7 @@ static int	get_index_in_base(char c, char *base)
 	return (-1);
 }
 
-int	ft_atoi_base(const char *nptr, const char *base)
+int	ft_atoi_base(const char *nptr, char *base)
 {
 	int	nb;
 	int	i;

@@ -9,7 +9,8 @@ RUN apt update && \
 	curl \
 	bat \
 	vim \
-	btop
+	btop \
+	fish
 # C tools
 RUN apt install -y \
 	build-essential \
@@ -18,6 +19,6 @@ RUN apt install -y \
 	valgrind
 RUN apt install -y \ 
 	python3-pip && \
-    python3 -m pip install -U norminette --break-system-packages
+	python3 -m pip install -U norminette --break-system-packages
 
 WORKDIR /workspaces/custom_libft
