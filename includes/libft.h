@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/25 00:12:08 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/25 13:13:25 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 char		*ft_strnstr(const char *big, const char *little, size_t n);
 char		*ft_strdup(const char *s1);
+char		*ft_strndup(const char *s1, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);

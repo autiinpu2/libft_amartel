@@ -57,7 +57,8 @@ SRC = \
 	$(SRC_DIR)get_next_line_utils.c \
 	$(SRC_DIR)ft_atol.c \
 	$(SRC_DIR)ft_atoll.c \
-	$(SRC_DIR)ft_atoi_base.c
+	$(SRC_DIR)ft_atoi_base.c \
+	$(SRC_DIR)ft_strndup.c
 
 INCLUDE = -Iincludes
 
