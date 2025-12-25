@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:52:18 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/20 00:03:52 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/25 00:11:37 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,3 @@ int	ft_atoi_base(const char *nptr, char *base)
 	}
 	return (sign * nb);
 }
-
