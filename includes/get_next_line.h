@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:47 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 18:07:39 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/25 18:45:50 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@
 
 char	*get_next_line(int fd);
 char	*ft_gnl_strjoin(char *s1, char const *s2);
-char	*ft_extract_line(char *stach);
-char	*ft_upadate_stach(char *stach);
-char	*ft_free_stach(char *stach, char *buffer);
-char	*ft_process_stach(char **stach, char *buffer);
+char	*ft_extract_line(char *stash);
+char	*ft_upadate_stash(char *stash);
+char	*ft_free_stash(char *stash, char *buffer);
+char	*ft_process_stash(char **stash, char *buffer);
 size_t	ft_gnl_strlen(const char *str);
+void	get_next_clean(char **stash);
 
 #endif

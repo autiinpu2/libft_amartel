@@ -6,18 +6,18 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:55 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 18:00:41 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/25 18:52:09 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "libft.h"
 
-char	*ft_free_stach(char *stach, char *buffer)
+char	*ft_free_stash(char *stash, char *buffer)
 {
-	free(stach);
+	free(stash);
 	free(buffer);
-	stach = NULL;
+	stash = NULL;
 	return (NULL);
 }
 
@@ -31,4 +31,16 @@ size_t	ft_gnl_strlen(const char *str)
 	while (str[len])
 		++len;
 	return (len);
+}
+
+void	get_next_clean(char **stash)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < 1024)
+	{
+		free(stash[i]);
+		++i;
+	}
 }
