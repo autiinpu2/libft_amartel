@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:37 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/25 18:46:13 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/31 21:10:01 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,12 +119,12 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	read_bytes = 1;
-	if (fd < 0)
-		get_next_clean(stash);
+	if (get_next_clean(stash, fd) == -1)
+		return (NULL);
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	while (ft_strchr(stash[fd], '\n') == NULL && read_bytes > 0)
+	while ((!stash[fd] || ft_strchr(stash[fd], '\n') == NULL) && read_bytes > 0)
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
 		if (read_bytes == -1)

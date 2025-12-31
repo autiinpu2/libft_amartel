@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:55 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/25 18:52:09 by amartel          ###   ########.fr       */
+/*   Updated: 2025/12/31 21:10:55 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,20 @@ size_t	ft_gnl_strlen(const char *str)
 	return (len);
 }
 
-void	get_next_clean(char **stash)
+int	get_next_clean(char **stash, int fd)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < 1024)
+	if (fd < 0)
 	{
-		free(stash[i]);
-		++i;
+		while (i < 1024)
+		{
+			free(stash[i]);
+			++i;
+		}
+		return (-1);
 	}
+	else
+		return (1);
 }
