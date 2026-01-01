@@ -1,6 +1,6 @@
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 BUILD_DIR = build/
 
@@ -74,8 +74,9 @@ $(BUILD_DIR):
 
 $(NAME): $(BUILD_DIR) $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-$(BUILD_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) $(INCLUDE) $^ -o $@ -c
+
+$(BUILD_DIR)%.o : $(SRC_DIR)%.c | $(BUILD_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -c
 
 fclean: clean
 	rm -f $(NAME)
@@ -83,5 +84,6 @@ fclean: clean
 clean:
 	rm -rf $(BUILD_DIR)
 
-re: fclean $(NAME)
+re: fclean
+	$(MAKE) all
 .PHONY: all clean fclean re bonus
