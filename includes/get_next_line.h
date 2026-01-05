@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:47 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/05 05:43:02 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/05 05:51:56 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
 # endif
+
+/**
+ * @file get_next_line.h
+ */
 
 /**
  * @brief A safe version of ft_strjoin.

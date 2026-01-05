@@ -6,12 +6,16 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 18:10:29 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/05 04:58:57 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/05 05:51:23 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ATOI_H
 # define ATOI_H
+
+/**
+ * @file atoi.h
+ */
 
 /**
  * @brief acsii to int
