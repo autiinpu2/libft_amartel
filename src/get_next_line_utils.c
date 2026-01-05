@@ -6,12 +6,11 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:55 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/31 21:10:55 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/05 04:05:04 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "libft.h"
 
 char	*ft_free_stash(char *stash, char *buffer)
 {

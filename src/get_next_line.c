@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:37 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/31 21:10:01 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/05 05:14:38 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	*ft_extract_line(char *stash)
 	return (line);
 }
 
-char	*ft_upadate_stash(char *stash)
+char	*ft_update_stash(char *stash)
 {
 	char	*new_stash;
 	size_t	i;
@@ -107,7 +107,7 @@ char	*ft_process_stash(char **stash_ptr, char *buffer)
 	}
 	free(buffer);
 	line = ft_extract_line(*stash_ptr);
-	*stash_ptr = ft_upadate_stash(*stash_ptr);
+	*stash_ptr = ft_update_stash(*stash_ptr);
 	return (line);
 }
 

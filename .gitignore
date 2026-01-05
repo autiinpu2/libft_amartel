@@ -1,2 +1,5 @@
 libft.a
 build/
+a.out.dSYM/
+main.c
+a.out
