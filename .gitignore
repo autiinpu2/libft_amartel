@@ -4,3 +4,4 @@ builddir/
 a.out.dSYM/
 main.c
 a.out
+.vscode/
