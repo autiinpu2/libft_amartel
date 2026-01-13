@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:47 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/05 05:51:56 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/12 23:02:20 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,19 @@ char	*ft_gnl_strjoin(char *s1, char const *s2);
  */
 char	*ft_extract_line(char *stash);
 /**
- * @brief Updates the stash after a line has been extracted.
+ * @brief Updates the stash after a line has been extracted
  * 
  * Removes the extracted line (everything up to and including '\n')
  * @param stash The static string used by get_next_line to store reading 
- * buffers.
- * @return The new stash starting after the newline.
+ * buffers
+ * @return The new stash starting after the newline
  */
 char	*ft_update_stash(char *stash);
 /**
- * @brief Frees the stash and the temporary buffer.
+ * @brief Frees the stash and the temporary buffer
  * 
  * @param stash The static string used by get_next_line to store reading 
- * buffers.
+ * buffers
  * @return NULL
  */
 char	*ft_free_stash(char *stash, char *buffer);
@@ -69,20 +69,19 @@ char	*ft_free_stash(char *stash, char *buffer);
  */
 char	*ft_process_stash(char **stash, char *buffer);
 /**
- * @brief A safe version of ft_strlen for get_next_line.
- * @param str The string to measure (can be NULL).
- * @return The length of the string, or 0 if str is NULL.
+ * @brief A safe version of ft_strlen for get_next_line
+ * @param str The string to measure (can be NULL)
+ * @return The length of the string, or 0 if str is NULL
  */
 size_t	ft_gnl_strlen(const char *str);
 /**
- * @brief Forces the release of the stash memory if fd is negative.
+ * @brief Forces the release of the stash memory if fd is negative
  * 
- * This function handles the cleanup of static buffers.
+ * This function handles the cleanup of static buffers
  * 
  * @param stash The static array used by get_next_line to store reading buffers
- * .
- * @param fd The file descriptor associated with the current read.
- * @return -1 to indicate cleanup was performed, or 1 if fd is valid (>= 0).
+ * @param fd The file descriptor associated with the current read
+ * @return -1 to indicate cleanup was performed, or 1 if fd is valid (>= 0)
  */
 int		get_next_clean(char **stash, int fd);
 
