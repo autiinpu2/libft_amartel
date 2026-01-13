@@ -5,3 +5,4 @@ a.out.dSYM/
 main.c
 a.out
 .vscode/
+compile_commands.json
