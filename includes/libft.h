@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/13 05:49:21 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/18 01:36:48 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,15 @@ char		*ft_strchr(const char *s, int c);
  */
 char		*ft_strrchr(const char *s, int c);
 /**
- * @brief compare a string
+ * @brief  compare a string
+ * @param s1 The frist string
+ * @param s2 The seconde string
+ * @return A pointer to the matching byte, or NULL if the character
+ * is not found
+ */
+int			ft_strcmp(const char *s1, const char *s2);
+/**
+ * @brief compare a string with n characters
  * @param s1 The frist string
  * @param s2 The seconde string
  * @param n Number of charaters to compare

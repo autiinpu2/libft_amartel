@@ -58,7 +58,8 @@ SRC = \
 	$(SRC_DIR)ft_atol.c \
 	$(SRC_DIR)ft_atoll.c \
 	$(SRC_DIR)ft_atoi_base.c \
-	$(SRC_DIR)ft_strndup.c
+	$(SRC_DIR)ft_strndup.c \
+	$(SRC_DIR)ft_strcmp.c
 
 INCLUDE = -Iincludes
 

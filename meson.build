@@ -54,9 +54,11 @@ sources = [
   'src/ft_substr.c',
   'src/ft_tolower.c',
   'src/ft_toupper.c',
+  'src/ft_strcmp.c',
   'src/get_next_line.c',
   'src/get_next_line_utils.c',
 ]
+
 includes = [include_directories('includes')]
 
 libft = static_library(
