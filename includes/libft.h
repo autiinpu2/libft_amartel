@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/18 01:36:48 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/18 05:33:34 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,7 +190,8 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
  * @param s1 The frist string
  * @param s2 The second string
  * @return The concatenation string of s1 and s2,
- * or NULL if one of string is NULL,
+ * or if s1 is NULL but s2 is not, then it revises s2 and vice versa,
+ * but if both are NULL, then it returns NULL
  * and NULL if memory allocation fails
  */
 char		*ft_strjoin(char const *s1, char const *s2);
