@@ -1,7 +1,8 @@
-.idea
-main.c
-*.out
-build/
 libft.a
-
+build/
+builddir/
+a.out.dSYM/
+main.c
+a.out
+.vscode/
 compile_commands.json
