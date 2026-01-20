@@ -3,7 +3,8 @@ project(
   'c',
   meson_version : '>= 1.3.0',
   version : '0.1',
-  default_options : ['warning_level=2'],
+  license : 'MIT',
+  default_options : ['warning_level=3'],
 )
 
 sources = [
@@ -55,8 +56,9 @@ sources = [
   'src/ft_tolower.c',
   'src/ft_toupper.c',
   'src/ft_strcmp.c',
-  'src/get_next_line.c',
-  'src/get_next_line_utils.c',
+  'src/get_next_line/get_next_line.c',
+  'src/get_next_line/get_next_line_utils.c',
+  'src/printf/printf.c',
 ]
 
 includes = [include_directories('includes')]

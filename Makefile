@@ -1,11 +1,8 @@
 CC = cc
-
-CFLAGS = -Wall -Wextra -Werror -g
-
+CFLAGS = -Wall -Wextra -Werror -g -MMD -MP
 BUILD_DIR = .build/
-
 OBJ = $(patsubst $(SRC_DIR)%.c,$(BUILD_DIR)%.o,$(SRC))
-
+DEPS = $(OBJ:.o=.d)
 
 SRC_DIR = src/
 
@@ -53,15 +50,15 @@ SRC = \
 	$(SRC_DIR)ft_lstclear.c \
 	$(SRC_DIR)ft_lstiter.c \
 	$(SRC_DIR)ft_lstmap.c \
-	$(SRC_DIR)get_next_line.c \
-	$(SRC_DIR)get_next_line_utils.c \
+	$(SRC_DIR)get_next_line/get_next_line.c \
+	$(SRC_DIR)get_next_line/get_next_line_utils.c \
 	$(SRC_DIR)ft_atol.c \
 	$(SRC_DIR)ft_atoll.c \
 	$(SRC_DIR)ft_atoi_base.c \
 	$(SRC_DIR)ft_strndup.c \
 	$(SRC_DIR)ft_strcmp.c
 
-INCLUDE = -Iincludes
+INCLUDES = -Iincludes
 
 NAME = libft.a
 
@@ -73,11 +70,12 @@ bonus: $(BUILD_DIR) $(OBJ)
 $(BUILD_DIR):
 	@mkdir -p $@
 
+$(BUILD_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
 $(NAME): $(BUILD_DIR) $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-
-$(BUILD_DIR)%.o : $(SRC_DIR)%.c | $(BUILD_DIR)
-	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -c
 
 fclean: clean
 	rm -f $(NAME)
@@ -89,3 +87,5 @@ re: fclean
 	$(MAKE) all
 
 .PHONY: all clean fclean re
+
+-include $(DEPS)
