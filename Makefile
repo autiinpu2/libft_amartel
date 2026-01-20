@@ -2,7 +2,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-BUILD_DIR = build/
+BUILD_DIR = .build/
 
 OBJ = $(patsubst $(SRC_DIR)%.c,$(BUILD_DIR)%.o,$(SRC))
 
@@ -87,4 +87,5 @@ clean:
 
 re: fclean
 	$(MAKE) all
-.PHONY: all clean fclean re bonus
+
+.PHONY: all clean fclean re

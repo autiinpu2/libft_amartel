@@ -1,5 +1,5 @@
 # libft
-Extention of 42 lift
+Extention of 42 libft
 
 That libft can compile with `meson.build` and `Makefile`
 
@@ -18,7 +18,7 @@ If you want put libft as subprojects in your project you can add `libft.wrap` or
 libft.wrap
 ```meson
 [wrap-git]
-url = https://git.0verlight.com/42/custom_libft.git
+url = https://github.com/0verlight/libft.git
 revision = HEAD
 depth = 1
 ```
