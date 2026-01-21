@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apuyane <apuyane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:29:53 by apuyane           #+#    #+#             */
-/*   Updated: 2026/01/21 14:46:48 by apuyane          ###   ########.fr       */
+/*   Updated: 2026/01/21 15:01:02 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "is.h"
+#include "is.h"
 
 bool	ft_isspace(const int c)
 {
