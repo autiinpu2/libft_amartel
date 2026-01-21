@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:35:41 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 17:59:55 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/21 02:15:17 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (s && fd >= 0)
-		write(fd, s, ft_strlen(s));
+		(void)write(fd, s, ft_strlen(s));
 }

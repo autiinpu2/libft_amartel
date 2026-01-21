@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:34:07 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 17:59:48 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/21 03:54:10 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	if (fd >= 0)
-		write(fd, &c, 1);
+		(void)write(fd, &c, 1);
 }
