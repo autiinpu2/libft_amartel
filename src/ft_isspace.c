@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apuyane <apuyane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:01:50 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/21 14:47:10 by apuyane          ###   ########.fr       */
+/*   Created: 2026/01/21 14:29:53 by apuyane           #+#    #+#             */
+/*   Updated: 2026/01/21 14:46:48 by apuyane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+# include "is.h"
 
-bool	ft_isalpha(const int c)
+bool	ft_isspace(const int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if (c == ' ' || (c >= 9 && c <= 13))
 		return (true);
 	return (false);
 }

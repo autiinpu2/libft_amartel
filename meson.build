@@ -18,6 +18,7 @@ sources = [
   'src/ft_isascii.c',
   'src/ft_isdigit.c',
   'src/ft_isprint.c',
+  'src/ft_isspace.c',
   'src/ft_itoa.c',
   'src/ft_lstadd_back.c',
   'src/ft_lstadd_front.c',
