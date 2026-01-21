@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amartel <amartel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: apuyane <apuyane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 04:06:43 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/12 22:47:51 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/21 14:41:27 by apuyane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,28 @@
 #ifndef IS_H
 # define IS_H
 
+# include "libft.h"
+
 /**
  * @brief Checks for an alphabetic character.
  * @param c The character to test.
  * @return Non-zero if c is an alphabetic character, 0 otherwise.
  */
-int	ft_isalpha(int c);
+bool	ft_isalpha(const int c);
 
 /**
  * @brief Checks for a digit (0 through 9).
  * @param c The character to test.
  * @return Non-zero if c is a digit, 0 otherwise.
  */
-int	ft_isdigit(int c);
+bool	ft_isdigit(const int c);
 
 /**
  * @brief Checks for an alphanumeric character.
  * @param c The character to test.
  * @return Non-zero if c is alphanumeric, 0 otherwise.
  */
-int	ft_isalnum(int c);
+bool	ft_isalnum(const int c);
 
 /**
  * @brief Checks whether c is a 7-bit unsigned char value that fits into the 
@@ -43,13 +45,20 @@ int	ft_isalnum(int c);
  * @param c The character to test.
  * @return Non-zero if c is an ASCII character, 0 otherwise.
  */
-int	ft_isascii(int c);
+bool	ft_isascii(const int c);
 
 /**
  * @brief Checks for any printable character (including space).
  * @param c The character to test.
  * @return Non-zero if c is printable, 0 otherwise.
  */
-int	ft_isprint(int c);
+bool	ft_isprint(const int c);
+
+/**
+ * @brief
+ * @param
+ * @return
+ */
+bool ft_isspace(const int c);
 
 #endif
