@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/01 00:37:42 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/01 02:26:19 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,20 +238,20 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char *));
  * @param c The character to output
  * @param fd The file descriptor on which to write
  */
-int		ft_putchar_fd(char c, int fd);
+int			ft_putchar_fd(char c, int fd);
 /**
  * @brief Output the interger 'n' to the given file descriptor
  * @param n The interger to output
  * @param fd The file descriptor on which to write
  * @return ascii demical of characher
  */
-int		ft_putnbr_fd(int n, int fd);
+int			ft_putnbr_fd(int n, int fd);
 /**
  * @brief Output the string 's' to the given file descriptor
  * @param s The string to output
  * @param fd The file descriptor on which to write
  */
-int		ft_putstr_fd(char *s, int fd);
+int			ft_putstr_fd(char *s, int fd);
 /**
  * @brief Output the string 's' with new line to the given file descriptor
  * @param s The string to output
@@ -275,6 +275,6 @@ char		*get_next_line(int fd);
  * @param fmt Ths string with flag `%{c,s,i,d,p,u,x,X,%}`
  * @return the length of fmt
  */
-int ft_dprintf(int fd, const char *fmt, ...);
+int			ft_dprintf(int fd, const char *fmt, ...);
 
 #endif
