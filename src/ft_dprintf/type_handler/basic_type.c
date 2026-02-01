@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 16:06:18 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/01 01:45:00 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/01 19:16:50 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ void	basic_type(va_list ap, int fd, const char *fmt, int *len)
 		*len += ft_putstr_fd(va_arg(ap, char *), fd);
 	else if (*fmt == 'd' || *fmt == 'i')
 		*len += ft_putnbr_fd(va_arg(ap, int), fd);
+	else if (*fmt == '%')
+		*len += write(fd, (char []){37}, 1);
 }

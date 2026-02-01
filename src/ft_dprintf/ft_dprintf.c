@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 15:31:24 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/01 01:43:42 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/01 19:17:48 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_dprintf(int fd, const char *fmt, ...)
 	{
 		if (fmt[i] == '%')
 		{
-			basic_type(&ap, fd, &fmt[i], &len);
+			basic_type(ap, fd, &fmt[i], &len);
 			i += 2;
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/01 02:26:19 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/01 19:24:21 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,6 +275,7 @@ char		*get_next_line(int fd);
  * @param fmt Ths string with flag `%{c,s,i,d,p,u,x,X,%}`
  * @return the length of fmt
  */
-int			ft_dprintf(int fd, const char *fmt, ...);
+int			ft_dprintf(int fd, const char *fmt, ...) 
+__attribute__((format(printf,2, 3)));
 
 #endif
