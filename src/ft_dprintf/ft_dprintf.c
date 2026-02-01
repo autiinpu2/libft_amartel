@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 23:47:22 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/01 01:43:24 by amartel          ###   ########.fr       */
+/*   Created: 2026/01/31 15:31:24 by amartel           #+#    #+#             */
+/*   Updated: 2026/02/01 01:43:42 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_dprintf.h"
 
-int	ft_putnbr_fd(int n, int fd)
+int	ft_dprintf(int fd, const char *fmt, ...)
 {
-	int	i;
+	va_list	ap;
+	int		len;
+	size_t	i;
 
+	len = 0;
 	i = 0;
-	if (fd >= 0)
+	if (!fmt)
+		return (-1);
+	va_start(ap, fmt);
+	while (fmt[i])
 	{
-		if (n == -2147483648)
-			i += ft_putstr_fd("-2147483648", fd);
-		else if (n < 0)
+		if (fmt[i] == '%')
 		{
-			i += ft_putchar_fd('-', fd);
-			i += ft_putnbr_fd(-n, fd);
-		}
-		else if (n > 9)
-		{
-			i += ft_putnbr_fd(n / 10, fd);
-			i += ft_putnbr_fd(n % 10, fd);
+			basic_type(&ap, fd, &fmt[i], &len);
+			i += 2;
 		}
 		else
-			i += ft_putchar_fd(n + '0', fd);
+			len += write(fd, &fmt[i++], 1);
 	}
-	return (i);
+	va_end(ap);
+	return (len);
 }

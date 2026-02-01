@@ -6,14 +6,18 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:35:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/21 02:15:17 by amartel          ###   ########.fr       */
+/*   Updated: 2026/01/31 23:48:20 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
+	int	len;
+
+	len = ft_strlen(s);
 	if (s && fd >= 0)
-		(void)write(fd, s, ft_strlen(s));
+		(void)write(fd, s, len);
+	return (len);
 }

@@ -8,6 +8,7 @@ OBJ = $(patsubst $(SRC_DIR)%.c,$(BUILD_DIR)%.o,$(SRC))
 
 
 SRC_DIR = src/
+SRC_FT_PRINTF_DIR := src/ft_dprintf/
 
 SRC = \
 	$(SRC_DIR)ft_atoi.c \
@@ -60,7 +61,10 @@ SRC = \
 	$(SRC_DIR)ft_atoll.c \
 	$(SRC_DIR)ft_atoi_base.c \
 	$(SRC_DIR)ft_strndup.c \
-	$(SRC_DIR)ft_strcmp.c
+	$(SRC_DIR)ft_strcmp.c \
+	$(SRC_FT_PRINTF_DIR)ft_dprintf.c \
+	$(SRC_FT_PRINTF_DIR)type_handler/basic_type.c \
+
 
 INCLUDE = -Iincludes
 
@@ -68,16 +72,14 @@ NAME = libft.a
 
 all: $(NAME)
 
-bonus: $(BUILD_DIR) $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-
 $(BUILD_DIR):
 	@mkdir -p $@
 
 $(NAME): $(BUILD_DIR) $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	$(AR) rcs $(NAME) $(OBJ)
 
-$(BUILD_DIR)%.o : $(SRC_DIR)%.c | $(BUILD_DIR)
+$(BUILD_DIR)%.o : $(SRC_DIR)%.c 
+	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -c
 
 fclean: clean

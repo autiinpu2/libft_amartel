@@ -13,7 +13,7 @@ meson compile -C builddir
 ```
 The lib as been created in builddir diretory.
 
-If you want put libft as subprojects in your project you can add `libft.wrap` or set `git submodule add https://git.0verlight.com/42/custom_libft.git subprojects/libft`
+If you want put libft as subprojects in your project you can add `libft.wrap` or set `git submodule add https://github.com/0verLighT/libft.git subprojects/libft`
 
 libft.wrap
 ```meson

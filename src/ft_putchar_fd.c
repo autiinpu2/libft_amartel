@@ -6,14 +6,13 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:34:07 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/21 03:54:10 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/01 01:41:06 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	if (fd >= 0)
-		(void)write(fd, &c, 1);
+	return (write(fd, &c, 1));
 }
