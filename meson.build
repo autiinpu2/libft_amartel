@@ -3,7 +3,7 @@ project(
   'c',
   meson_version : '>= 1.3.0',
   version : '0.1',
-  default_options : ['warning_level=2'],
+  default_options : ['warning_level=3'],
 )
 
 sources = [
@@ -58,6 +58,8 @@ sources = [
   'src/ft_strcmp.c',
   'src/get_next_line.c',
   'src/get_next_line_utils.c',
+  'src/ft_dprintf/ft_dprintf.c',
+  'src/ft_dprintf/type_handler/basic_type.c'
 ]
 
 includes = [include_directories('includes')]
