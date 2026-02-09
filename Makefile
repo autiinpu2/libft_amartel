@@ -1,94 +1,53 @@
-CC = cc
+CC			:= cc
+CFLAGS		:= -Wall -Wextra -Werror -g -MP -MMD
+AR			:= ar rcs
+SRC			:= ft_atoi.c ft_bzero.c ft_calloc.c	\
+	ft_isalnum.c ft_isalpha.c ft_isascii.c		\
+	ft_isdigit.c ft_isspace.c ft_isprint.c		\
+	ft_memchr.c ft_memcmp.c ft_memcpy.c			\
+	ft_memmove.c ft_memset.c ft_strchr.c		\
+	ft_strdup.c ft_strlcat.c ft_strlcpy.c		\
+	ft_strncmp.c ft_strlen.c ft_strcmp.c		\
+	ft_strnstr.c ft_strrchr.c ft_substr.c		\
+	ft_tolower.c ft_toupper.c ft_strjoin.c		\
+	ft_split.c ft_strtrim.c ft_itoa.c			\
+	ft_strmapi.c ft_striteri.c ft_putchar_fd.c	\
+	ft_putendl_fd.c ft_putnbr_fd.c				\
+	ft_putstr_fd.c ft_lstadd_back.c				\
+	ft_lstadd_front.c ft_lstlast.c ft_lstnew.c	\
+	ft_lstdelone.c ft_lstsize.c ft_lstclear.c	\
+	ft_lstiter.c ft_lstmap.c ft_atol.c			\
+	ft_atoll.c ft_atoi_base.c ft_strndup.c		\
 
-CFLAGS = -Wall -Wextra -Werror -g
+FT_DPRINFT	:= ft_dprintf.c type_handler/basic_type.c
+GNL			:= get_next_line.c get_next_line_utils.c
+SOURCES		:=									\
+	$(addprefix src/, $(SRC))					\
+	$(addprefix src/, $(GNL))					\
+	$(addprefix src/ft_dprintf/, $(FT_DPRINFT))	\
 
-BUILD_DIR = .build/
-
-OBJ = $(patsubst $(SRC_DIR)%.c,$(BUILD_DIR)%.o,$(SRC))
-
-
-SRC_DIR = src/
-SRC_FT_PRINTF_DIR := src/ft_dprintf/
-
-SRC = \
-	$(SRC_DIR)ft_atoi.c \
-	$(SRC_DIR)ft_bzero.c \
-	$(SRC_DIR)ft_calloc.c \
-	$(SRC_DIR)ft_isalnum.c \
-	$(SRC_DIR)ft_isalpha.c \
-	$(SRC_DIR)ft_isascii.c \
-	$(SRC_DIR)ft_isdigit.c \
-	$(SRC_DIR)ft_isspace.c \
-	$(SRC_DIR)ft_isprint.c \
-	$(SRC_DIR)ft_memchr.c \
-	$(SRC_DIR)ft_memcmp.c \
-	$(SRC_DIR)ft_memcpy.c \
-	$(SRC_DIR)ft_memmove.c \
-	$(SRC_DIR)ft_memset.c \
-	$(SRC_DIR)ft_strchr.c \
-	$(SRC_DIR)ft_strdup.c \
-	$(SRC_DIR)ft_strlcat.c \
-	$(SRC_DIR)ft_strlcpy.c \
-	$(SRC_DIR)ft_strlen.c \
-	$(SRC_DIR)ft_strncmp.c \
-	$(SRC_DIR)ft_strnstr.c \
-	$(SRC_DIR)ft_strrchr.c \
-	$(SRC_DIR)ft_substr.c \
-	$(SRC_DIR)ft_tolower.c \
-	$(SRC_DIR)ft_toupper.c \
-	$(SRC_DIR)ft_strjoin.c \
-	$(SRC_DIR)ft_split.c \
-	$(SRC_DIR)ft_strtrim.c \
-	$(SRC_DIR)ft_itoa.c \
-	$(SRC_DIR)ft_strmapi.c \
-	$(SRC_DIR)ft_striteri.c \
-	$(SRC_DIR)ft_putchar_fd.c \
-	$(SRC_DIR)ft_putendl_fd.c \
-	$(SRC_DIR)ft_putnbr_fd.c \
-	$(SRC_DIR)ft_putstr_fd.c \
-	$(SRC_DIR)ft_lstadd_front.c \
-	$(SRC_DIR)ft_lstlast.c \
-	$(SRC_DIR)ft_lstnew.c \
-	$(SRC_DIR)ft_lstsize.c \
-	$(SRC_DIR)ft_lstdelone.c \
-	$(SRC_DIR)ft_lstadd_back.c \
-	$(SRC_DIR)ft_lstclear.c \
-	$(SRC_DIR)ft_lstiter.c \
-	$(SRC_DIR)ft_lstmap.c \
-	$(SRC_DIR)get_next_line.c \
-	$(SRC_DIR)get_next_line_utils.c \
-	$(SRC_DIR)ft_atol.c \
-	$(SRC_DIR)ft_atoll.c \
-	$(SRC_DIR)ft_atoi_base.c \
-	$(SRC_DIR)ft_strndup.c \
-	$(SRC_DIR)ft_strcmp.c \
-	$(SRC_FT_PRINTF_DIR)ft_dprintf.c \
-	$(SRC_FT_PRINTF_DIR)type_handler/basic_type.c \
-
-
-INCLUDE = -Iincludes
-
-NAME = libft.a
+INCLUDE	:= -Iincludes
+NAME	:= libft.a
+OBJS	:= $(SOURCES:.c=.o)
+DEPS	:= $(SOURCES:.c=.d)
 
 all: $(NAME)
 
-$(BUILD_DIR):
-	@mkdir -p $@
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-$(NAME): $(BUILD_DIR) $(OBJ)
-	$(AR) rcs $(NAME) $(OBJ)
-
-$(BUILD_DIR)%.o : $(SRC_DIR)%.c 
-	@mkdir -p $(dir $@)
+%.o : %.c
 	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -c
 
 fclean: clean
 	rm -f $(NAME)
 
 clean:
-	rm -rf $(BUILD_DIR)
+	rm -f $(OBJS) $(DEPS)
 
 re: fclean
 	$(MAKE) all
+
+-include $(DEPS)
 
 .PHONY: all clean fclean re
