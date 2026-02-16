@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:37 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/05 05:14:38 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/16 18:06:52 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_gnl_strjoin(char *s1, const char *s2)
 	size_t	i;
 	size_t	len_s1;
 
-	len_s1 = ft_gnl_strlen(s1);
-	new_str = malloc(sizeof(char) * (len_s1 + ft_gnl_strlen(s2) + 1));
+	len_s1 = ft_strlen(s1);
+	new_str = malloc(sizeof(char) * (len_s1 + ft_strlen(s2) + 1));
 	if (!new_str)
 	{
 		free(s1);
@@ -82,7 +82,7 @@ char	*ft_update_stash(char *stash)
 		return (NULL);
 	}
 	++i;
-	new_stash = malloc(sizeof(char) * (ft_gnl_strlen(&stash[i]) + 1));
+	new_stash = malloc(sizeof(char) * (ft_strlen(&stash[i]) + 1));
 	if (!new_stash)
 	{
 		free(stash);

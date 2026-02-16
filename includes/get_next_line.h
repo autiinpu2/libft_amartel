@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:47 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/12 23:02:20 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/16 18:07:05 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,6 @@ char	*ft_free_stash(char *stash, char *buffer);
  * @return The line return by extract_line()
  */
 char	*ft_process_stash(char **stash, char *buffer);
-/**
- * @brief A safe version of ft_strlen for get_next_line
- * @param str The string to measure (can be NULL)
- * @return The length of the string, or 0 if str is NULL
- */
-size_t	ft_gnl_strlen(const char *str);
 /**
  * @brief Forces the release of the stash memory if fd is negative
  * 

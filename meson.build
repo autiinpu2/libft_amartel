@@ -1,12 +1,15 @@
 project(
   'libft',
   'c',
-  meson_version : '>= 1.3.0',
+  meson_version : '>= 0.63.0',
   version : '0.1',
-  default_options : ['warning_level=3'],
+  default_options : [
+    'warning_level=3',
+    'optimization=3'
+  ],
 )
 
-sources = [
+sources = files(
   'src/ft_atoi.c',
   'src/ft_atoi_base.c',
   'src/ft_atol.c',
@@ -60,11 +63,13 @@ sources = [
   'src/get_next_line_utils.c',
   'src/ft_dprintf/ft_dprintf.c',
   'src/ft_dprintf/type_handler/basic_type.c'
-]
+)
 
 includes = [include_directories('includes')]
+# Install header 'libft.h'
+subdir('includes')
 
-libft = static_library(
+libft = both_libraries(
   'ft',
   sources,
   install : true,
