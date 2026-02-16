@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:47 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/16 18:07:05 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/16 20:42:33 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,6 @@
  * @file get_next_line.h
  */
 
-/**
- * @brief A safe version of ft_strjoin.
- * Concatenates s1 and s2. If one of the strings is NULL, 
- * it is treated as an empty string (length 0).
- * @param s1 The first string (can be NULL).
- * @param s2 The second string (can be NULL).
- * @return A new allocated string containing s1 followed by s2.
- */
-char	*ft_gnl_strjoin(char *s1, char const *s2);
 /**
  * @brief Extracts the line from the stash (up to '\n').
  * 

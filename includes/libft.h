@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/01 19:41:46 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/16 21:07:49 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,7 +195,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
  * but if both are NULL, then it returns NULL
  * and NULL if memory allocation fails
  */
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 /**
  * @brief copy of 's1' with characters specified in 'set'
  * removed from the beginning and the end of the string.

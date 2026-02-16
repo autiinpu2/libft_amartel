@@ -2,7 +2,7 @@ project(
   'libft',
   'c',
   meson_version : '>= 0.63.0',
-  version : '0.1',
+  version : '0.1.1',
   default_options : [
     'warning_level=3',
     'optimization=3'
@@ -60,7 +60,6 @@ sources = files(
   'src/ft_toupper.c',
   'src/ft_strcmp.c',
   'src/get_next_line.c',
-  'src/get_next_line_utils.c',
   'src/ft_dprintf/ft_dprintf.c',
   'src/ft_dprintf/type_handler/basic_type.c'
 )

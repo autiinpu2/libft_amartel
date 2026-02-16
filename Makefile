@@ -20,7 +20,7 @@ SRC			:= ft_atoi.c ft_bzero.c ft_calloc.c	\
 	ft_atoll.c ft_atoi_base.c ft_strndup.c		\
 
 FT_DPRINFT	:= ft_dprintf.c type_handler/basic_type.c
-GNL			:= get_next_line.c get_next_line_utils.c
+GNL			:= get_next_line.c
 SOURCES		:=									\
 	$(addprefix src/, $(SRC))					\
 	$(addprefix src/, $(GNL))					\
