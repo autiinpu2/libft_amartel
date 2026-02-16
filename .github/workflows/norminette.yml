@@ -26,4 +26,5 @@ jobs:
       - run: python3 -m pip install -U norminette
       - name: Norminette "libft"
         run: |
-          ! norminette src/ includes/ | grep -E ".+\.[ch]: Error\!|^Error:"
+          set -o pipefail
+          (norminette src/ includes/ || true) | grep -E ".+\.[ch]: Error\!|^Error:" && exit 1 || exit 0
