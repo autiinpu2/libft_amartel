@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/16 21:07:49 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/18 20:00:07 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -277,5 +277,9 @@ char	*get_next_line(int fd);
  */
 int		ft_dprintf(int fd, const char *fmt, ...)
 		__attribute__((format(printf, 2, 3)));
-
+/**
+ * @brief display number in the standard
+ * @param n the interger to diaplay
+ */
+void	ft_putnbr(int n);
 #endif
