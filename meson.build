@@ -60,7 +60,7 @@ sources = files(
   'src/ft_toupper.c',
   'src/ft_strcmp.c',
   'src/get_next_line.c',
-  'src/putnbr.c',
+  'src/ft_putnbr.c',
   'src/ft_dprintf/ft_dprintf.c',
   'src/ft_dprintf/type_handler/basic_type.c'
 )
