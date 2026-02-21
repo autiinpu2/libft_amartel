@@ -1,0 +1,29 @@
+name: flake8
+
+on:
+  pull_request:
+    paths:
+      - 'tools/**'
+      - '.flake8'
+  push:
+    paths:
+      - 'tools/**'
+      - '.flake8'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+        with:
+          path: "tools"

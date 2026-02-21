@@ -1,0 +1,41 @@
+name: Inital check
+
+on:
+  pull_request:
+    paths:
+      - 'includes/**'
+      - 'src/**'
+  push:
+    paths:
+      - 'includes/**'
+      - 'src/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inital_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install -U norminette
+      - name: Norminette "libft"
+        run: |
+          set -o pipefail
+          (norminette src/ includes/ || true) | grep -E ".+\.[ch]: Error\!|^Error:" && exit 1 || exit 0
+      - name: Check missing files in build system
+        run: |
+          ./tools/check_missing_sources.py
+  makefile:
+    name: Makefile
+    runs-on: ubuntu-latest
+    needs: inital_check
+    steps:
+      - uses: actions/checkout@v4
+      - name: compile libft
+        run: make -j8

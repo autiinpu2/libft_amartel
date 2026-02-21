@@ -65,7 +65,7 @@ sources = files(
   'src/ft_dprintf/type_handler/basic_type.c'
 )
 
-includes = [include_directories('includes')]
+includes = include_directories('includes')
 # Install header 'libft.h'
 subdir('includes')
 
