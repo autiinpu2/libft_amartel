@@ -10,8 +10,6 @@ GREEN = "\033[32m"
 class Meson:
     def __init__(self):
         self.sources = set()
-    # regex 'sources\s*\+?=\s*files\((.*?)\)' for match files
-    # regex '^\s*subdir\((.*)\)' for match subdir(0)
 
     def _get_sources(self, path="meson.build") -> set:
         """
@@ -23,11 +21,13 @@ class Meson:
         except FileNotFoundError:
             raise Exception(f"{B_YELLOW}Meson:{RESET}{RED} file '{path}' doesn't exist")
 
+        # regex 'sources\s*\+?=\s*files\((.*?)\)' for match files
         match = re.search(r'sources\s*\+?=\s*files\((.*?)\)', content, re.DOTALL)
         if match:
             sources = re.findall(r"'([a-zA-Z].*)'", match.group(1))
             self.sources.update(sources)
 
+        # regex '^\s*subdir\((.*)\)' for match subdir('anything')
         subdir = re.findall(r"subdir\('(.*)'\)", content)
         if subdir:
             for directory in subdir:

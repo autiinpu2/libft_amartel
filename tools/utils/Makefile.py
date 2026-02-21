@@ -10,8 +10,6 @@ GREEN = "\033[32m"
 class Makefile:
     def __init__(self):
         self.sources = set()
-    # regex 'sources\s*\+?=\s*files\((.*?)\)' for match files
-    # regex '^\s*subdir\((.*)\)' for match subdir(0)
 
     def _get_sources(self, path="Makefile") -> set:
         """

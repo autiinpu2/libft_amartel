@@ -1,4 +1,4 @@
-name: Inital check
+name: sanity_checks
 
 on:
   pull_request:
@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  inital_check:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +34,7 @@ jobs:
   makefile:
     name: Makefile
     runs-on: ubuntu-latest
-    needs: inital_check
+    needs: checks
     steps:
       - uses: actions/checkout@v4
       - name: compile libft
