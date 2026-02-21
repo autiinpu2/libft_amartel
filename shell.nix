@@ -5,6 +5,8 @@
     graphviz
     meson
     ninja
+    python312
+    python312Packages.flake8
   ]
   ++ lib.optionals stdenv.isLinux [
     valgrind
