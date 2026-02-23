@@ -15,12 +15,13 @@ class Meson(BuildSystem):
             with open(path, 'r') as f:
                 content = f.read()
         except FileNotFoundError:
-            raise Exception(f"{self.B_YELLOW}Meson:{self.RESET}{self.RED} file '{path}' doesn't exist")
+            print(f"{self.B_YELLOW}Meson:{self.RESET}{self.RED} file '{path}' doesn't exist")
 
         # regex 'sources\s*\+?=\s*files\((.*?)\)' for match files
-        match = re.search(r'sources\s*\+?=\s*files\((.*?)\)', content, re.DOTALL)
-        if match:
-            sources = re.findall(r"'([a-zA-Z].*)'", match.group(1))
+        match = re.finditer(r'sources\s*\+?=\s*files\((.*?)\)', content, re.DOTALL)
+
+        for m in match:
+            sources = re.findall(r"'([a-zA-Z].*)'", m.group(1))
             self.sources.update(sources)
 
         # regex '^\s*subdir\((.*)\)' for match subdir('anything')

@@ -14,7 +14,7 @@ class Makefile(BuildSystem):
             with open(path, 'r') as f:
                 content = f.read()
         except FileNotFoundError:
-            raise Exception(f"{self.B_YELLOW}{self.name}:{self.RESET}{self.RED} file '{path}' doesn't exist")
+            print(f"{self.B_YELLOW}{self.name}:{self.RESET}{self.RED} file '{path}' doesn't exist")
 
         match = re.search(r'^SOURCES\s*:?=\s*(.*?)(?:\n\n|\n[A-Z]|\Z)', content, re.MULTILINE | re.DOTALL)
 
