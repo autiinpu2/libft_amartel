@@ -1,7 +1,8 @@
 import os
+from abc import ABC, abstractmethod
 
 
-class BuildSystem:
+class BuildSystem(ABC):
     B_YELLOW = "\033[1;33m"
     RESET = "\033[0m"
     RED = "\033[31m"
@@ -36,3 +37,7 @@ class BuildSystem:
             raise Exception(f"{self.B_YELLOW}{self.name}:{self.RESET}{self.RED} Extra file{s}: {files}")
         else:
             print(f"{self.GREEN}No missing source in {self.name}{self.RESET}")
+
+    @abstractmethod
+    def _get_sources(self, path) -> set:
+        pass
