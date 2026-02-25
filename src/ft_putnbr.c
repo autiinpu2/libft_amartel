@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 04:58:25 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/18 19:57:48 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/25 21:59:31 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_putnbr(int n)
 	divider = 1;
 	if (nb < 0)
 	{
-		(void)write(0, "-", 1);
+		(void) write(1, "-", 1);
 		nb = -nb;
 	}
 	if (nb == 0)
 	{
-		(void)write(0, "0", 1);
+		(void) write(1, "0", 1);
 		return ;
 	}
 	while (divider * 10 <= nb)
@@ -35,7 +35,7 @@ void	ft_putnbr(int n)
 	while (divider > 0)
 	{
 		c = nb / divider + '0';
-		(void)write(0, &c, 1);
+		(void) write(1, &c, 1);
 		nb %= divider;
 		divider /= 10;
 	}
