@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 22:57:32 by amartel           #+#    #+#             */
-/*   Updated: 2026/01/18 01:34:35 by amartel          ###   ########.fr       */
+/*   Updated: 2026/02/27 00:56:38 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (!s1 || !s2)
+		return (1);
 	i = 0;
 	if (n == 0)
 		return (0);
