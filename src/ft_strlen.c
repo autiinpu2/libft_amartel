@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:19:46 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/16 18:06:19 by amartel          ###   ########.fr       */
+/*   Updated: 2026/03/15 17:22:12 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (!s)
 		return (0);
-	while (s[i] != '\0')
-		i++;
+	while (s[i])
+		++i;
 	return (i);
 }
