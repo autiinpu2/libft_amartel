@@ -2,6 +2,7 @@ CC			:= cc
 CFLAGS		:= -Wall -Wextra -Werror -g -MP -MMD
 AR			:= ar rcs
 SOURCES := \
+	src/ft_abs.c \
 	src/ft_atoi.c \
 	src/ft_bzero.c \
 	src/ft_calloc.c \

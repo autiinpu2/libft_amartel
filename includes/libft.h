@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/18 20:00:07 by amartel          ###   ########.fr       */
+/*   Updated: 2026/03/19 01:46:12 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,4 +282,5 @@ int		ft_dprintf(int fd, const char *fmt, ...)
  * @param n the interger to diaplay
  */
 void	ft_putnbr(int n);
+long	ft_abs(long v);
 #endif

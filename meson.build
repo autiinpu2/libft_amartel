@@ -10,6 +10,7 @@ project(
 )
 
 sources = files(
+  'src/ft_abs.c',
   'src/ft_atoi.c',
   'src/ft_atoi_base.c',
   'src/ft_atol.c',
