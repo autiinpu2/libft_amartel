@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:32:23 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/27 00:30:20 by amartel          ###   ########.fr       */
+/*   Updated: 2026/04/07 01:07:47 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	char	*new_str;
 	size_t	i;
 
-	if (!s1)
-		s1 = ft_calloc(1, sizeof(char));
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
