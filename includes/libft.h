@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:16:41 by amartel           #+#    #+#             */
-/*   Updated: 2026/03/19 01:46:12 by amartel          ###   ########.fr       */
+/*   Updated: 2026/04/14 05:40:26 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 /**
  * @brief zero a byte string
- * 
+ *
  * It writes zeros ('\0') to that area
- * 
+ *
  * @param s Pointer to the memory
  * @param n Number of bytes to set to zero
  */
@@ -60,8 +60,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
  * @param s1 Pointer to the frist source in memory area
  * @param s2 Pointer to the seconde source in memory area
  * @param n Number of bytes to compare
- * @return An interger  less than, equal to, or greater than 
- * zero if the first n bytes of s1 is found to be less than, 
+ * @return An interger  less than, equal to, or greater than
+ * zero if the first n bytes of s1 is found to be less than,
  * matching, or greater than s2
  */
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -133,8 +133,8 @@ int		ft_strcmp(const char *s1, const char *s2);
  * @param s1 The frist string
  * @param s2 The seconde string
  * @param n Number of charaters to compare
- * @return An interger  less than, equal to, or greater than 
- * zero if the first n bytes of s1 is found to be less than, 
+ * @return An interger  less than, equal to, or greater than
+ * zero if the first n bytes of s1 is found to be less than,
  * matching, or greater than s2
  */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -195,7 +195,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
  * but if both are NULL, then it returns NULL
  * and NULL if memory allocation fails
  */
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(const char *s1, const char *s2);
 /**
  * @brief copy of 's1' with characters specified in 'set'
  * removed from the beginning and the end of the string.
@@ -223,7 +223,7 @@ char	*ft_itoa(int n);
  * string resulting form successive application of 'f'
  * @param s The string on which to iterate
  * @param f The function to apply to each charater
- * @return The string create form the successive application of 'f' 
+ * @return The string create form the successive application of 'f'
  * function, or NULL if the allocation fails
  */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -268,8 +268,8 @@ void	ft_putendl_fd(char *s, int fd);
 char	*get_next_line(int fd);
 /**
  * @brief Write the fmt in the fd
- * 
- * @warning In this version, ft_dprintf does not support parsing 
+ *
+ * @warning In this version, ft_dprintf does not support parsing
  * `[parameter][flags][width][.precision][length]`
  * @param fd The fd
  * @param fmt Ths string with flag `%{c,s,i,d,p,u,x,X,%}`

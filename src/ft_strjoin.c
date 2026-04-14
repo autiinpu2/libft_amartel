@@ -6,34 +6,26 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:32:23 by amartel           #+#    #+#             */
-/*   Updated: 2026/04/07 01:07:47 by amartel          ###   ########.fr       */
+/*   Updated: 2026/04/14 05:39:30 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*new_str;
 	size_t	i;
 
 	if (!s1 && !s2)
 		return (NULL);
-	if (!s1)
-		return (s2);
-	if (!s2)
-		return (s1);
 	new_str = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
 	if (!new_str)
-	{
-		free(s1);
 		return (NULL);
-	}
 	i = -1;
 	while (s1[++i])
 		new_str[i] = s1[i];
 	while (*s2)
 		new_str[i++] = *s2++;
-	free(s1);
 	return (new_str);
 }
