@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 15:32:39 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/08 18:53:31 by amartel          ###   ########.fr       */
+/*   Updated: 2026/04/15 19:21:39 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@
  * @brief Detect the type afer '%' characters
  * @return The lenght atfer format the string
  */
-void	basic_type(va_list ap, int fd, const char *fmt, int *len);
+void	basic_type(va_list *ap, int fd, const char *fmt, int *len);
 
 #endif
