@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 23:32:23 by amartel           #+#    #+#             */
-/*   Updated: 2026/04/14 05:39:30 by amartel          ###   ########.fr       */
+/*   Updated: 2026/04/28 04:33:19 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (!new_str)
 		return (NULL);
 	i = -1;
-	while (s1[++i])
+	while (s1 && s1[++i])
 		new_str[i] = s1[i];
-	while (*s2)
+	while (s2 && *s2)
 		new_str[i++] = *s2++;
 	return (new_str);
 }

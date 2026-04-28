@@ -6,7 +6,7 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 22:59:04 by amartel           #+#    #+#             */
-/*   Updated: 2025/12/03 18:00:23 by amartel          ###   ########.fr       */
+/*   Updated: 2026/04/28 04:32:21 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t size)
 
 	str = (char *)big;
 	i = 0;
-	j = 0;
 	if ((!big && !size) || !str)
 		return (NULL);
 	if (little[0] == '\0')
