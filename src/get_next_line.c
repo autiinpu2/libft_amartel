@@ -6,12 +6,13 @@
 /*   By: amartel <amartel@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:05:37 by amartel           #+#    #+#             */
-/*   Updated: 2026/02/16 21:33:39 by amartel          ###   ########.fr       */
+/*   Updated: 2026/04/29 05:04:03 by amartel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "libft.h"
+#include <stdio.h>
 
 int	get_next_clean(char **stash, int fd)
 {
@@ -91,44 +92,48 @@ char	*ft_process_stash(char **stash_ptr, char *buffer)
 {
 	char	*line;
 
+	free(buffer);
 	if (*stash_ptr == NULL || **stash_ptr == '\0')
 	{
 		free(*stash_ptr);
-		free(buffer);
 		*stash_ptr = NULL;
 		return (NULL);
 	}
-	free(buffer);
 	line = ft_extract_line(*stash_ptr);
 	*stash_ptr = ft_update_stash(*stash_ptr);
+	if (*stash_ptr && **stash_ptr == '\0')
+	{
+		free(*stash_ptr);
+		*stash_ptr = NULL;
+	}
 	return (line);
 }
 
 char	*get_next_line(int fd)
 {
-	char		*buffer;
+	char		*buf;
 	static char	*stash[1024];
 	int			read_bytes;
 	char		*line;
+	char		*tmp;
 
 	read_bytes = 1;
 	if (get_next_clean(stash, fd) == -1)
 		return (NULL);
-	buffer = ft_calloc(sizeof(char), (BUFFER_SIZE + 1));
-	if (!buffer)
-		return (NULL);
-	while ((!stash[fd] || ft_strchr(stash[fd], '\n') == NULL) && read_bytes > 0)
+	buf = ft_calloc(sizeof(char), (BUFFER_SIZE + 1));
+	while (buf && (!stash[fd] || !ft_strchr(stash[fd], '\n')) && read_bytes > 0)
 	{
-		read_bytes = read(fd, buffer, BUFFER_SIZE);
+		read_bytes = read(fd, buf, BUFFER_SIZE);
 		if (read_bytes == -1)
 		{
 			free(stash[fd]);
-			free(buffer);
+			free(buf);
 			return (NULL);
 		}
-		buffer[read_bytes] = '\0';
-		stash[fd] = ft_strjoin(stash[fd], buffer);
+		tmp = ft_strjoin(stash[fd], buf);
+		free(stash[fd]);
+		stash[fd] = tmp;
 	}
-	line = ft_process_stash(&stash[fd], buffer);
+	line = ft_process_stash(&stash[fd], buf);
 	return (line);
 }
