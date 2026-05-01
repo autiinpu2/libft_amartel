@@ -65,19 +65,22 @@ DEPS	:= $(SOURCES:.c=.d)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "\033[1;32m$(NAME) created.\033[0m"
 
 %.o : %.c
-	$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -c
+	@$(CC) $(CFLAGS) $(INCLUDE) $< -o $@ -c
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[1;32mEverything cleaned.\033[0m"
 
 clean:
-	rm -f $(OBJS) $(DEPS)
+	@rm -f $(OBJS) $(DEPS)
+	@echo "\033[1;32mObjects cleaned.\033[0m"
 
 re: fclean
-	$(MAKE) all
+	@$(MAKE) all
 
 -include $(DEPS)
 
